@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "macros.html" as macros %}
 
 {% block title %}Home · {{ config.title | default(value="MyBlog") }}{% endblock title %}
 
@@ -34,23 +35,7 @@
     {% if blog_section.pages | length > 0 %}
       {% set latest = blog_section.pages | first %}
       <div class="blog-grid">
-        <article class="blog-card">
-          <header class="blog-card-header">
-            <div>
-              <p class="blog-card-meta">
-                {{ latest.date | date(format="%b %e, %Y") }}
-              </p>
-              <h3 class="blog-card-title">
-                <a href="{{ latest.permalink | safe }}">{{ latest.title }}</a>
-              </h3>
-            </div>
-          </header>
-          {% if latest.description %}
-            <p class="blog-card-summary">{{ latest.description }}</p>
-          {% elif latest.summary %}
-            <p class="blog-card-summary">{{ latest.summary | safe }}</p>
-          {% endif %}
-        </article>
+        {{ macros::blog_card(page=latest) }}
       </div>
     {% else %}
       <p class="section-subtitle">No posts yet. Once you add some under <code>content/blog/</code>, they will show up here.</p>
