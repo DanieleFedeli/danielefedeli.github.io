@@ -177,6 +177,11 @@ function initSearch() {
 
     var results = (await initIndex()).search(term, options);
     
+    // Filter to only show blog posts (URLs containing /blog/)
+    results = results.filter(function(result) {
+      return result.ref.includes('/blog/') && !result.ref.endsWith('/blog/');
+    });
+    
     if (results.length === 0) {
       $searchResultsItems.innerHTML = '<li class="search-no-results">No results found for "' + term + '"</li>';
       return;
