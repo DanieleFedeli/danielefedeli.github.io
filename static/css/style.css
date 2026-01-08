@@ -316,3 +316,129 @@ body {
     padding-inline: 1.1rem;
   }
 }
+
+/* Search Page Styles */
+.search-container {
+  padding-top: 0.5rem;
+}
+
+.search-header {
+  margin-bottom: 2rem;
+}
+
+.search-input-wrapper {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+#search {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  border: 1px solid var(--border-subtle);
+  border-radius: 0.5rem;
+  background: rgba(15, 23, 42, 0.8);
+  color: var(--fg);
+  transition: border-color 150ms ease, background 150ms ease;
+}
+
+#search:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(15, 23, 42, 0.95);
+}
+
+#search::placeholder {
+  color: var(--muted);
+}
+
+.search-initial {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.search-results {
+  margin-top: 2rem;
+}
+
+.search-results-heading {
+  font-size: 1.15rem;
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+}
+
+.search-results__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.search-result-item {
+  background: radial-gradient(circle at top left, #111827, #020617);
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  padding: 1.1rem 1.3rem;
+  transition: box-shadow 140ms ease, border-color 140ms ease;
+}
+
+.search-result-item:hover {
+  border-color: rgba(56, 189, 248, 0.65);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+}
+
+.search-result-title {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+
+.search-result-title a {
+  color: var(--fg);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.search-result-title a:hover {
+  color: var(--accent);
+}
+
+.search-result-teaser {
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.search-result-teaser mark {
+  background: rgba(56, 189, 248, 0.25);
+  color: var(--accent);
+  padding: 0.1rem 0.2rem;
+  border-radius: 0.2rem;
+  font-weight: 500;
+}
+
+.search-loading,
+.search-no-results {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 640px) {
+  .search-result-item {
+    padding: 0.9rem 1rem;
+  }
+  
+  .search-result-title {
+    font-size: 1rem;
+  }
+  
+  .search-result-teaser {
+    font-size: 0.88rem;
+  }
+}
+
