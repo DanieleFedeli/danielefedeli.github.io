@@ -136,9 +136,20 @@ function initSearch() {
 
   var initIndex = async function () {
     if (index === undefined) {
-      index = fetch("/search_index.en.js")
+      var url = "/search_index.en.js";
+      if (window.location.origin.includes("127.0.0.1") || window.location.origin.includes("localhost")) {
+        url = window.location.origin + url;
+      }
+      
+      index = fetch(url)
         .then(async function(response) {
-          return await elasticlunr.Index.load(await response.json());
+          return await response.text();
+        })
+        .then(function(text) {
+          // The search_index.en.js file contains: window.searchIndex = {...}
+          // We need to evaluate it and then load the index
+          eval(text);
+          return elasticlunr.Index.load(window.searchIndex);
         });
     }
     return await index;
