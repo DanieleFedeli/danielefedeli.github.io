@@ -273,6 +273,14 @@ body {
   letter-spacing: 0.12em;
 }
 
+.post-date {
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 0.45rem;
+}
+
 .back-link {
   color: var(--accent);
   text-decoration: none;
@@ -280,6 +288,8 @@ body {
   text-transform: none;
   letter-spacing: normal;
   transition: color 150ms ease;
+  display: inline-block;
+  margin-bottom: 1.5rem;
 }
 
 .back-link:hover {
