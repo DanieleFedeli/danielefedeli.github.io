@@ -1,0 +1,19 @@
+{% macro blog_card(page) %}
+<article class="blog-card">
+  <header class="blog-card-header">
+    <div>
+      <p class="blog-card-meta">
+        {{ page.date | date(format="%b %e, %Y") }}
+      </p>
+      <h3 class="blog-card-title">
+        <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+      </h3>
+    </div>
+  </header>
+  {% if page.description %}
+    <p class="blog-card-summary">{{ page.description }}</p>
+  {% elif page.summary %}
+    <p class="blog-card-summary">{{ page.summary | safe }}</p>
+  {% endif %}
+</article>
+{% endmacro %}
