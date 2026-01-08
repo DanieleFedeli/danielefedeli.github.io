@@ -127,7 +127,34 @@ body {
   margin-top: 1.7rem;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 0.9rem;
+}
+
+.social-links {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  color: var(--muted);
+  transition: background-color 150ms ease, border-color 150ms ease, transform 120ms ease, color 150ms ease;
+  text-decoration: none;
+}
+
+.social-links:hover {
+  background: rgba(15, 23, 42, 0.95);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.social-icon {
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 .btn {
