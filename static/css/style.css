@@ -299,6 +299,7 @@ body {
 
 .prose {
   font-size: 1rem;
+  line-height: 1.65;
 }
 
 .prose h1 {
