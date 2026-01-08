@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Search · {{ config.title | default(value="MyBlog") }}{% endblock title %}
+
+{% block content %}
+  <section class="search-container">
+    <header class="search-header">
+      <h1 class="section-heading">Search</h1>
+      <p class="section-subtitle">Find posts by title or content.</p>
+    </header>
+
+    <div class="search-input-wrapper">
+      <input 
+        type="search" 
+        id="search" 
+        placeholder="Type to search..."
+        autocomplete="off"
+        autofocus
+      >
+    </div>
+
+    <div class="search-initial">
+      <p>Enter a search term to find relevant posts.</p>
+    </div>
+
+    <div class="search-results" style="display: none;">
+      <h2 class="search-results-heading">Results</h2>
+      <ul class="search-results__items"></ul>
+    </div>
+  </section>
+{% endblock content %}
+
+{% block head %}
+  <script src="{{ get_url(path='elasticlunr.min.js') }}"></script>
+  <script src="{{ get_url(path='search.js') }}" defer></script>
+{% endblock head %}
