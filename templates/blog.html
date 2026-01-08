@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "macros.html" as macros %}
 
 {% block title %}Blog · {{ config.title | default(value="MyBlog") }}{% endblock title %}
 
@@ -10,21 +11,7 @@
 
   <div class="blog-grid">
     {% for page in section.pages %}
-      <article class="blog-card">
-        <header class="blog-card-header">
-          <div>
-            <p class="blog-card-meta">
-              {{ page.date | date(format="%b %e, %Y") }}
-            </p>
-            <h2 class="blog-card-title">
-              <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
-            </h2>
-          </div>
-        </header>
-        {% if page.summary %}
-          <p class="blog-card-summary">{{ page.summary | safe }}</p>
-        {% endif %}
-      </article>
+      {{ macros::blog_card(page=page) }}
     {% endfor %}
   </div>
 {% endblock content %}
