@@ -9,6 +9,7 @@
   </head>
   <body>
     <div class="site">
+      {% block header %}
       <header class="site-header">
         <div class="navbar">
           <div class="nav-logo">
@@ -16,6 +17,7 @@
           </div>
         </div>
       </header>
+      {% endblock header %}
       <main class="site-main">
         <div class="container">
           {% block content %}{% endblock content %}
