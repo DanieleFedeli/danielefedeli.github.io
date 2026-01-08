@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ config.title | default(value="MyBlog") }}{% endblock title %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block head %}{% endblock head %}
+    <link rel="stylesheet" href="{{ get_url(path='css/style.css') }}">
+  </head>
+  <body>
+    <div class="site">
+      <header class="site-header">
+        <div class="navbar">
+          <div class="nav-logo">
+            <a href="{{ get_url(path='@/_index.md') }}">MyBlog<span>HTML · CSS</span></a>
+          </div>
+          <nav class="nav-links">
+            <a href="{{ get_url(path='@/_index.md') }}">Home</a>
+            <a href="{{ get_url(path='@/blog/_index.md') }}">Blog</a>
+          </nav>
+        </div>
+      </header>
+      <main class="site-main">
+        <div class="container">
+          {% block content %}{% endblock content %}
+        </div>
+      </main>
+      <footer class="site-footer">
+        <div class="container">
+          <small>© {{ now() | date(format="%Y") }} MyBlog. Built with Zola, HTML &amp; CSS only.</small>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

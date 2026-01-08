@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Home · {{ config.title | default(value="MyBlog") }}{% endblock title %}
+
+{% block content %}
+  <section class="hero">
+    <p class="hero-kicker">Personal blog</p>
+    <h1 class="hero-title">Thoughts, notes and experiments.</h1>
+    <p class="hero-subtitle">
+      A small, fast blog built with <strong>Zola</strong> and just
+      HTML &amp; CSS. No JavaScript, no fuss.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ get_url(path='@/blog/_index.md') }}">Read the blog</a>
+      <a class="btn btn-ghost" href="{{ get_url(path='@/blog/first.md') }}">Jump to the first post</a>
+    </div>
+  </section>
+
+  <section style="margin-top: 2.5rem;">
+    <h2 class="section-heading">Latest post</h2>
+    <p class="section-subtitle">A quick peek into what I've been writing.</p>
+    {% set blog_section = get_section(path="blog/_index.md") %}
+    {% if blog_section.pages | length > 0 %}
+      {% set latest = blog_section.pages | first %}
+      <div class="blog-grid">
+        <article class="blog-card">
+          <header class="blog-card-header">
+            <div>
+              <p class="blog-card-meta">
+                {{ latest.date | date(format="%b %e, %Y") }}
+              </p>
+              <h3 class="blog-card-title">
+                <a href="{{ latest.permalink | safe }}">{{ latest.title }}</a>
+              </h3>
+            </div>
+          </header>
+          {% if latest.summary %}
+            <p class="blog-card-summary">{{ latest.summary | safe }}</p>
+          {% endif %}
+        </article>
+      </div>
+    {% else %}
+      <p class="section-subtitle">No posts yet. Once you add some under <code>content/blog/</code>, they will show up here.</p>
+    {% endif %}
+  </section>
+{% endblock content %}

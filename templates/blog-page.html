@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} · {{ config.title | default(value="MyBlog") }}{% endblock title %}
+
+{% block content %}
+  <article class="post">
+    <header class="post-header">
+      <p class="post-meta">
+        {{ page.date | date(format="%b %e, %Y") }}
+      </p>
+      <h1 class="post-title">{{ page.title }}</h1>
+    </header>
+    <section class="prose">
+      {{ page.content | safe }}
+    </section>
+  </article>
+{% endblock content %}
