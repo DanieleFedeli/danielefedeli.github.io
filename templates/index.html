@@ -45,7 +45,9 @@
               </h3>
             </div>
           </header>
-          {% if latest.summary %}
+          {% if latest.description %}
+            <p class="blog-card-summary">{{ latest.description }}</p>
+          {% elif latest.summary %}
             <p class="blog-card-summary">{{ latest.summary | safe }}</p>
           {% endif %}
         </article>
