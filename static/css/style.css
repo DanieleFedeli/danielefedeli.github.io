@@ -141,7 +141,7 @@ body {
   background: rgba(15, 23, 42, 0.8);
   border: 1px solid rgba(148, 163, 184, 0.35);
   color: var(--muted);
-  transition: background-color 150ms ease, border-color 150ms ease, transform 120ms ease, color 150ms ease;
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
   text-decoration: none;
 }
 
@@ -149,7 +149,6 @@ body {
   background: rgba(15, 23, 42, 0.95);
   border-color: var(--accent);
   color: var(--accent);
-  transform: translateY(-2px);
 }
 
 .social-icon {
