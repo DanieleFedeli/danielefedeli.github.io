@@ -9,7 +9,7 @@
   --accent-hover: #0ea5e9;
   --border-subtle: #1f2937;
   --content-width: 760px;
-  --font-sans: 'Karla', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -20,6 +20,7 @@ body {
   color: var(--fg);
   font-family: var(--font-sans);
   line-height: 1.6;
+  letter-spacing: -0.011em;
 }
 
 .site {
