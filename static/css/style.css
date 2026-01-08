@@ -166,7 +166,7 @@ body {
   font-size: 0.86rem;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 150ms ease, border-color 150ms ease, transform 120ms ease, box-shadow 120ms ease;
+  transition: background-color 150ms ease, border-color 150ms ease, box-shadow 120ms ease;
 }
 
 .btn-primary {
@@ -177,7 +177,6 @@ body {
 }
 
 .btn-primary:hover {
-  transform: translateY(-1px);
   box-shadow: 0 18px 35px rgba(56, 189, 248, 0.35);
 }
 
