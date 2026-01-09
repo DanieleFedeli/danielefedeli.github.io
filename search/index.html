@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Search · Daniele Fedeli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
+  <script src="https://danielefedeli.github.io/elasticlunr.min.js"></script>
+  <script src="https://danielefedeli.github.io/search.js" defer></script>
+
+    <link rel="stylesheet" href="https://danielefedeli.github.io/css/style.css">
+  </head>
+  <body>
+    <div class="site">
+      
+      <header class="site-header">
+        <div class="navbar">
+          <div class="nav-logo">
+            <a href="https://danielefedeli.github.io">Daniele Fedeli</a>
+          </div>
+          <nav class="nav-links">
+            <a href="https://danielefedeli.github.io/search">Search</a>
+          </nav>
+        </div>
+      </header>
+      
+      <main class="site-main">
+        <div class="container">
+          
+  <section class="search-container">
+    <header class="search-header">
+      <h1 class="section-heading">Search</h1>
+      <p class="section-subtitle">Find posts by title or content.</p>
+    </header>
+
+    <div class="search-input-wrapper">
+      <input 
+        type="search" 
+        id="search" 
+        placeholder="Type to search..."
+        autocomplete="off"
+        autofocus
+      >
+    </div>
+
+    <div class="search-initial">
+      <p>Enter a search term to find relevant posts.</p>
+    </div>
+
+    <div class="search-results" style="display: none;">
+      <h2 class="search-results-heading">Results</h2>
+      <ul class="search-results__items"></ul>
+    </div>
+  </section>
+
+        </div>
+      </main>
+      <footer class="site-footer">
+        <div class="container">
+          <small>© 2026 Daniele Fedeli. Built with Zola.</small>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
